@@ -36,8 +36,8 @@ export default {
       'setSenha'
     ]),
     login(){
-      axios.get('trabalho',
-      { params: { id: 1 }, headers: { Accept: 'application/json'}, auth: { username: this.nome, password: this.senha} })
+      axios.post('login',
+      { username: this.nome, password: this.senha} )
       .then(res => {
         console.log(res);
         this.sucesso();

@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://harlequin-mastodon-59b7arti.ws-us17.gitpod.io/'
+axios.defaults.baseURL = 'https://8080-gray-jellyfish-fu6wf25t.ws-us17.gitpod.io/calculo_do_Km/'
 
 Vue.config.productionTip = false
 
