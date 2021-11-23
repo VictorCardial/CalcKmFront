@@ -40,11 +40,12 @@ export default {
       { username: this.nome, password: this.senha} )
       .then(res => {
         console.log(res);
+        localStorage.setItem('token',res.data.token);
         this.sucesso();
       })
       .catch(error => {
         console.log(error);
-        if (error.response.status === 401) {
+        if (error.response.status === 401 || error.response.status === 403) {
           console.log('Usuário ou senha inválidos');
         }
         else {
