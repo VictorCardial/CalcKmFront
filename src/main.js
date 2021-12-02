@@ -2,11 +2,17 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import axios from 'axios'
+import axios from "axios";
+import setAuthHeader from './utils/HeaderAuth';
 
-axios.defaults.baseURL = 'https://8080-gray-jellyfish-fu6wf25t.ws-us17.gitpod.io/calculo_do_Km/';
+if(localStorage.jwtToken){
+  setAuthHeader(localStorage.jwtToken);
+}else{
+  setAuthHeader(false);
+}
 
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+axios.defaults.baseURL = 'https://8080-copper-mastodon-gmo5wiyl.ws-us21.gitpod.io/calculo_do_Km/';
+
 
 Vue.config.productionTip = false
 

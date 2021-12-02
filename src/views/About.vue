@@ -21,6 +21,7 @@
 
 import axios from 'axios';
 import { mapMutations } from 'vuex';
+import setAuthHeader from '../utils/HeaderAuth';
 
 export default {
   name: 'Home',
@@ -40,7 +41,8 @@ export default {
       { username: this.nome, password: this.senha} )
       .then(res => {
         console.log(res);
-        localStorage.setItem('token',res.data.token);
+        localStorage.setItem('jwtToken',res.data.token);
+        setAuthHeader(res.data.token);
         this.sucesso();
       })
       .catch(error => {
@@ -56,7 +58,7 @@ export default {
     sucesso() {
       this.setUsuario(this.nome);
       this.setSenha(this.senha);
-      this.$router.push('/trabalho');
+      this.$router.push('/formulario');
     }
   }
 }
