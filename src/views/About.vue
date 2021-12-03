@@ -43,6 +43,7 @@ export default {
         console.log(res);
         localStorage.setItem('jwtToken',res.data.token);
         setAuthHeader(res.data.token);
+        localStorage.setItem('username',res.data.username);
         this.sucesso();
       })
       .catch(error => {

@@ -75,7 +75,7 @@ export default {
                 modelo: this.modelo,
                 valor_automovel: this.valor_automovel,
                 depreciacao: this.depreciacao,
-                usuario:{nome:this.usuario}
+                usuario:{nome:localStorage.username}
             }
             )
             .then(res => {
